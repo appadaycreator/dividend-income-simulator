@@ -1,8 +1,9 @@
 {
   "name": "Dividend Income Simulator",
   "short_name": "dividend-inc",
-  "start_url": "/",
+  "start_url": "/dividend-income-simulator/",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#6366f1"
+  "theme_color": "#6366f1",
+  "scope": "/dividend-income-simulator/"
 }
