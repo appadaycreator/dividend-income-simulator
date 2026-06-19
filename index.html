@@ -210,6 +210,22 @@ ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;margin:0!impor
 .history-item.latest{background:#f0fdf4;border-color:#86efac;}
 /* M4: グラフ */
 .chart-wrap{margin:14px 0 10px;position:relative;max-height:220px;}
+/* M7: シナリオ比較プレビューカード（デザイン準拠） */
+.scn-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:16px 0 8px;}
+.scn-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px 18px;box-shadow:var(--shadow-sm);text-align:center;transition:transform .18s,box-shadow .18s;}
+.scn-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);}
+.scn-card.hl{border:2px solid var(--green);box-shadow:var(--shadow);}
+.scn-label{font-size:12px;font-weight:700;color:var(--muted);letter-spacing:.05em;margin-bottom:4px;}
+.scn-name{font-size:15px;font-weight:800;color:var(--green-deep);margin-bottom:14px;}
+.scn-ring{width:104px;height:104px;border-radius:50%;margin:0 auto 14px;display:flex;align-items:center;justify-content:center;}
+.scn-ring i{width:78px;height:78px;border-radius:50%;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font-style:normal;}
+.scn-ring i b{font-size:24px;font-weight:800;line-height:1;}
+.scn-ring i span{font-size:10px;color:var(--muted);font-weight:600;margin-top:2px;}
+.scn-card ul{list-style:none;display:flex;flex-direction:column;gap:8px;text-align:left;margin-top:4px;}
+.scn-card li{font-size:13px;color:#374151;display:flex;align-items:center;gap:8px;}
+.scn-card li img{width:16px;height:16px;flex:none;}
+.scn-card li b{margin-left:auto;font-weight:700;color:var(--green-deep);}
+@media (max-width:760px){.scn-grid{grid-template-columns:1fr;}}
 /* M7: 比較テーブル */
 .compare-table{width:100%;border-collapse:collapse;font-size:13px;margin-top:12px;}
 .compare-table th{background:#f8fafc;color:#64748b;font-weight:600;padding:8px 6px;text-align:left;border-bottom:2px solid #e2e8f0;font-size:12px;}
@@ -351,7 +367,52 @@ ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important;margin:0!impor
         <!-- M7: 比較シミュレーション -->
         <div id="compare" class="card" style="margin-top:18px;">
           <h3 style="font-size:18px;font-weight:800;color:var(--green-deep);margin-bottom:6px;display:flex;align-items:center;gap:10px;"><img src="assets/icons/split/01-03.png" style="width:24px;height:24px" alt="">シナリオ比較</h3>
-          <p style="font-size:13px;color:#64748b;margin-bottom:12px;">複数のシナリオを並べて比較できます。計算後に「追加」ボタンを押してください。</p>
+          <p style="font-size:13px;color:#64748b;margin-bottom:12px;">複数のシナリオを並べて比較できます。下は代表的な3パターンの目安。計算後に「追加」ボタンであなたの結果も並べられます。</p>
+
+          <!-- 代表シナリオ プレビュー（デザイン準拠） -->
+          <div class="scn-grid">
+            <div class="scn-card">
+              <div class="scn-label">シナリオA・堅実</div>
+              <div class="scn-name">高配当株コア</div>
+              <div class="scn-ring" style="background:conic-gradient(var(--green) 0 62%,#e5e7eb 62% 100%);">
+                <i><b style="color:var(--green-dark)">62%</b><span>FIRE達成度</span></i>
+              </div>
+              <ul>
+                <li><img src="assets/icons/split/04-01.png" alt="">保有資産<b>1,000万円</b></li>
+                <li><img src="assets/icons/split/04-01.png" alt="">配当利回り<b>3.5%</b></li>
+                <li><img src="assets/icons/split/04-01.png" alt="">年間配当<b>約27.9万円</b></li>
+                <li><img src="assets/icons/split/04-01.png" alt="">月額<b>約2.3万円</b></li>
+              </ul>
+            </div>
+            <div class="scn-card hl">
+              <div class="scn-label">シナリオB・積極</div>
+              <div class="scn-name">資産2,000万円</div>
+              <div class="scn-ring" style="background:conic-gradient(var(--green) 0 80%,#e5e7eb 80% 100%);">
+                <i><b style="color:var(--green-dark)">80%</b><span>FIRE達成度</span></i>
+              </div>
+              <ul>
+                <li><img src="assets/icons/split/04-01.png" alt="">保有資産<b>2,000万円</b></li>
+                <li><img src="assets/icons/split/04-01.png" alt="">配当利回り<b>3.6%</b></li>
+                <li><img src="assets/icons/split/04-01.png" alt="">年間配当<b>約57.4万円</b></li>
+                <li><img src="assets/icons/split/04-01.png" alt="">月額<b>約4.8万円</b></li>
+              </ul>
+            </div>
+            <div class="scn-card">
+              <div class="scn-label">シナリオC・スタート</div>
+              <div class="scn-name">少額からコツコツ</div>
+              <div class="scn-ring" style="background:conic-gradient(var(--amber) 0 44%,#e5e7eb 44% 100%);">
+                <i><b style="color:var(--amber-dark)">44%</b><span>FIRE達成度</span></i>
+              </div>
+              <ul>
+                <li><img src="assets/icons/split/04-01.png" alt="">保有資産<b>800万円</b></li>
+                <li><img src="assets/icons/split/04-01.png" alt="">配当利回り<b>3.0%</b></li>
+                <li><img src="assets/icons/split/04-01.png" alt="">年間配当<b>約19.1万円</b></li>
+                <li><img src="assets/icons/split/04-01.png" alt="">月額<b>約1.6万円</b></li>
+              </ul>
+            </div>
+          </div>
+          <p style="font-size:11px;color:#94a3b8;margin:4px 0 14px;">※ 税引き後利率79.685%・FIRE目標月20万円で試算した目安です。</p>
+
           <button type="button" class="btn" style="width:auto;padding:10px 20px;font-size:14px;min-height:auto;" onclick="addToCompare()">＋ 現在の結果を比較に追加</button>
           <div id="compare-section" style="margin-top:12px;display:none;overflow-x:auto;">
             <table class="compare-table">
