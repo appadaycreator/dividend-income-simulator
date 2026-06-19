@@ -27,7 +27,7 @@ j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root{
-            --green:#16A34A; --green-dark:#15803d; --green-deep:#14532d;
+            --green:#15803d; --green-dark:#166534; --green-deep:#14532d; --green-forest:#0f3d23;
             --amber:#F59E0B; --amber-dark:#d97706;
             --bg:#f6faf7; --bg-soft:#ecfdf3; --ink:#1f2937; --muted:#6b7280;
             --line:#e5e7eb; --card:#ffffff;
@@ -60,7 +60,7 @@ j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
 
         /* Hero */
         .hero{position:relative;overflow:hidden;}
-        .hero-bg{position:absolute;inset:0;background-image:linear-gradient(120deg,rgba(20,83,45,.78),rgba(22,163,74,.55) 55%,rgba(22,163,74,.30)),url('../assets/photos/photo_01.jpg');background-size:cover;background-position:center;}
+        .hero-bg{position:absolute;inset:0;background-image:linear-gradient(120deg,rgba(13,60,35,.90),rgba(20,83,45,.74) 52%,rgba(21,128,61,.46)),url('../assets/photos/photo_01.jpg');background-size:cover;background-position:center;}
         .hero-inner{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:46px;align-items:center;padding:74px 0 86px;}
         .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.20);border:1px solid rgba(255,255,255,.4);color:#fff;font-size:13px;font-weight:700;padding:6px 16px;border-radius:30px;margin-bottom:20px;}
         .hero h1{color:#fff;font-size:46px;line-height:1.25;font-weight:800;letter-spacing:.01em;text-shadow:0 2px 18px rgba(0,0,0,.25);}
@@ -86,7 +86,10 @@ j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
         .ring .txt b{display:block;font-size:14px;color:var(--ink);}
         .ring .txt span{font-size:12px;color:var(--muted);}
         .bars{display:flex;align-items:flex-end;gap:7px;height:64px;margin-top:14px;}
-        .bars div{flex:1;background:linear-gradient(var(--green),var(--green-dark));border-radius:5px 5px 0 0;opacity:.9;}
+        .bars div{flex:1;background:linear-gradient(var(--green),var(--green-forest));border-radius:5px 5px 0 0;opacity:.92;}
+        .bar-labels{display:flex;gap:7px;margin-top:6px;}
+        .bar-labels span{flex:1;text-align:center;font-size:9px;color:var(--muted);font-weight:600;}
+        .ring .circle{background:conic-gradient(var(--green) 0 62%,#dcefe2 62% 100%)!important;}
 
         /* Section base */
         section{padding:72px 0;}
@@ -152,6 +155,38 @@ j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
         .faq-item .q::before{content:"Q";flex:none;width:24px;height:24px;border-radius:6px;background:var(--green);color:#fff;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;}
         .faq-item .a{font-size:14px;color:var(--muted);margin-top:10px;padding-left:34px;}
 
+        /* Capability mini-grid */
+        .caps{background:#fff;}
+        .cap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:42px;}
+        .cap{display:flex;gap:14px;align-items:flex-start;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:18px;transition:transform .15s,box-shadow .15s;}
+        .cap:hover{transform:translateY(-3px);box-shadow:var(--shadow-sm);}
+        .cap .ic{flex:none;width:46px;height:46px;border-radius:11px;background:var(--bg-soft);display:flex;align-items:center;justify-content:center;}
+        .cap .ic img{width:26px;height:26px;}
+        .cap h4{font-size:14.5px;font-weight:800;color:var(--green-deep);margin-bottom:4px;}
+        .cap p{font-size:12.5px;color:var(--muted);line-height:1.6;}
+
+        /* Comparison table */
+        .cmp-title{text-align:center;font-size:18px;color:var(--green-deep);margin-top:50px;font-weight:800;}
+        .cmp{margin:20px auto 0;max-width:760px;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow-sm);}
+        .cmp table{width:100%;border-collapse:collapse;}
+        .cmp th,.cmp td{padding:13px 14px;text-align:center;font-size:14px;border-bottom:1px solid var(--line);}
+        .cmp thead th{background:var(--green-deep);color:#fff;font-weight:700;font-size:13.5px;}
+        .cmp tbody th{text-align:left;font-weight:700;color:var(--green-deep);background:var(--bg-soft);font-size:13.5px;}
+        .cmp td.hl{color:var(--green-dark);font-weight:800;}
+        .cmp tbody tr:last-child td,.cmp tbody tr:last-child th{border-bottom:none;}
+
+        /* Voices */
+        .voices{background:linear-gradient(180deg,var(--bg-soft),#fff);}
+        .voice-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:42px;}
+        .voice{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:var(--shadow-sm);text-align:center;transition:transform .18s,box-shadow .18s;}
+        .voice:hover{transform:translateY(-4px);box-shadow:var(--shadow);}
+        .voice .face{height:150px;background-size:cover;background-position:center top;}
+        .voice .c{padding:18px 16px;}
+        .voice .star{color:var(--amber);font-size:14px;letter-spacing:2px;}
+        .voice h4{font-size:14px;font-weight:800;color:var(--green-deep);margin:6px 0;}
+        .voice p{font-size:12.5px;color:var(--muted);line-height:1.65;}
+        .voice .who{font-size:11.5px;color:var(--green);font-weight:700;margin-top:10px;}
+
         /* CTA band */
         .cta-band{position:relative;overflow:hidden;text-align:center;padding:70px 0;}
         .cta-band-bg{position:absolute;inset:0;background-image:linear-gradient(120deg,rgba(20,83,45,.92),rgba(22,163,74,.82)),url('../assets/photos/photo_05.jpg');background-size:cover;background-position:center;}
@@ -171,14 +206,16 @@ j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
         @media (max-width:900px){
             .hero-inner{grid-template-columns:1fr;gap:34px;padding:54px 0;}
             .hero h1{font-size:34px;}
-            .feat-grid,.steps,.aud-grid,.trust-row{grid-template-columns:1fr 1fr;}
+            .feat-grid,.steps,.aud-grid,.trust-row,.cap-grid,.voice-grid{grid-template-columns:1fr 1fr;}
             .screen-box,.faq-wrap{grid-template-columns:1fr;}
             .faq-photo{display:none;}
             .nav-links{display:none;}
             .menu-btn{display:inline-flex;}
         }
         @media (max-width:560px){
-            .feat-grid,.steps,.aud-grid,.trust-row{grid-template-columns:1fr;}
+            .feat-grid,.steps,.aud-grid,.trust-row,.cap-grid{grid-template-columns:1fr;}
+            .voice-grid{grid-template-columns:1fr 1fr;}
+            .cmp th,.cmp td{padding:10px 8px;font-size:12.5px;}
             .hero h1{font-size:28px;}
             .sec-title{font-size:25px;}
             .screen-stats{grid-template-columns:1fr 1fr;}
@@ -237,6 +274,11 @@ j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
           <div class="txt"><b>FIRE達成まであと少し</b><span>目標月20万円までの達成度</span></div>
         </div>
         <div class="bars"><div style="height:40%"></div><div style="height:55%"></div><div style="height:48%"></div><div style="height:70%"></div><div style="height:62%"></div><div style="height:82%"></div><div style="height:95%"></div></div>
+        <div class="bar-labels"><span>1月</span><span>2月</span><span>3月</span><span>4月</span><span>6月</span><span>9月</span><span>12月</span></div>
+        <div class="dash-grid" style="margin:14px 0 0">
+          <div class="stat" style="background:#fff;border:1px solid var(--line)"><div class="k">想定利回り</div><div class="v" style="font-size:18px">4.0<small>%</small></div></div>
+          <div class="stat" style="background:#fff;border:1px solid var(--line)"><div class="k">必要資産</div><div class="v" style="font-size:18px">800<small>万円</small></div></div>
+        </div>
       </div>
     </div>
   </div>
@@ -287,6 +329,23 @@ j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
   </div>
 </section>
 
+<!-- Capabilities -->
+<section class="caps">
+  <div class="wrap">
+    <div class="center"><span class="sec-tag">WHAT YOU CAN DO</span></div>
+    <h2 class="sec-title">このツールでできること</h2>
+    <p class="sec-sub">配当投資の「気になる数字」を、まとめて即チェック。</p>
+    <div class="cap-grid">
+      <div class="cap"><div class="ic"><img src="../assets/icons/split/01-06.png" alt=""></div><div><h4>年間配当額の試算</h4><p>保有資産×利回りで税引き前後の年間配当を即計算。</p></div></div>
+      <div class="cap"><div class="ic"><img src="../assets/icons/split/03-08.png" alt=""></div><div><h4>月額換算の表示</h4><p>毎月いくら受け取れるかを月額ベースで把握できます。</p></div></div>
+      <div class="cap"><div class="ic"><img src="../assets/icons/split/01-05.png" alt=""></div><div><h4>FIRE達成度メーター</h4><p>目標月額に対する達成率をゲージで可視化します。</p></div></div>
+      <div class="cap"><div class="ic"><img src="../assets/icons/split/02-06.png" alt=""></div><div><h4>NISA／課税の比較</h4><p>非課税と約20%課税の手取り差を一目で確認。</p></div></div>
+      <div class="cap"><div class="ic"><img src="../assets/icons/split/05-02.png" alt=""></div><div><h4>必要資産の逆算</h4><p>「月20万円」など目標から必要な投資額を逆算。</p></div></div>
+      <div class="cap"><div class="ic"><img src="../assets/icons/split/02-03.png" alt=""></div><div><h4>データはブラウザ内</h4><p>入力値はサーバー送信なし。安心して試算できます。</p></div></div>
+    </div>
+  </div>
+</section>
+
 <!-- Screen preview -->
 <section id="screen" class="screen">
   <div class="wrap">
@@ -309,6 +368,20 @@ j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
       </div>
       <div class="screen-shot"><img src="../assets/photos/photo_06.jpg" alt="配当収入シミュレーション利用イメージ"></div>
     </div>
+    <h3 class="cmp-title">NISA口座と一般口座の手取り比較（年間配当 480,000円の場合）</h3>
+    <div class="cmp">
+      <table>
+        <thead><tr><th>項目</th><th>一般口座</th><th>NISA口座</th></tr></thead>
+        <tbody>
+          <tr><th>税引き前配当</th><td>480,000円</td><td>480,000円</td></tr>
+          <tr><th>税率</th><td>約20.315%</td><td class="hl">0%（非課税）</td></tr>
+          <tr><th>税金</th><td>−97,512円</td><td class="hl">0円</td></tr>
+          <tr><th>手取り（年間）</th><td>382,488円</td><td class="hl">480,000円</td></tr>
+          <tr><th>月額換算</th><td>約31,874円</td><td class="hl">約40,000円</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="sec-sub" style="margin-top:14px;font-size:13px">※ 税率は2026年時点の上場株式配当（申告分離課税）の概算。実際の税額は条件により異なります。</p>
   </div>
 </section>
 
@@ -338,6 +411,33 @@ j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
       <div class="aud-card"><div class="ph" style="background-image:url('../assets/photos/photo_11.jpg')"></div><div class="c"><h4><img src="../assets/icons/split/04-03.png" alt="">FIREを目指す方</h4><p>配当収入だけで生活する「配当FIRE」までの距離を、具体的な数字で把握したい方に。</p></div></div>
       <div class="aud-card"><div class="ph" style="background-image:url('../assets/photos/photo_12.jpg')"></div><div class="c"><h4><img src="../assets/icons/split/04-04.png" alt="">投資初心者の方</h4><p>「いくら投資すれば毎月いくら入る？」を、登録不要でかんたんにシミュレーションしたい方に。</p></div></div>
       <div class="aud-card"><div class="ph" style="background-image:url('../assets/photos/photo_13.jpg')"></div><div class="c"><h4><img src="../assets/icons/split/03-05.png" alt="">NISAを活用したい方</h4><p>新NISAの非課税メリットを、一般口座と比べて手取りベースで確認したい方に。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Voices -->
+<section class="voices">
+  <div class="wrap">
+    <div class="center"><span class="sec-tag">VOICES</span></div>
+    <h2 class="sec-title">利用者の声</h2>
+    <p class="sec-sub">配当のリアルな数字が見えて、投資の方針が決まったという声が届いています。</p>
+    <div class="voice-grid">
+      <div class="voice">
+        <div class="face" style="background-image:url('../assets/photos/photo_18.jpg')"></div>
+        <div class="c"><div class="star">★★★★★</div><h4>FIREまでの距離が明確に</h4><p>「あと何万円必要か」が数字で出るので、毎月の積立額を決めやすくなりました。</p><div class="who">30代・会社員 / FIRE志向</div></div>
+      </div>
+      <div class="voice">
+        <div class="face" style="background-image:url('../assets/photos/photo_11.jpg')"></div>
+        <div class="c"><div class="star">★★★★★</div><h4>初心者でも一瞬で理解</h4><p>登録なしで、いくら投資すれば毎月いくら入るのかがすぐ分かって感動しました。</p><div class="who">20代・投資初心者</div></div>
+      </div>
+      <div class="voice">
+        <div class="face" style="background-image:url('../assets/photos/photo_21.jpg')"></div>
+        <div class="c"><div class="star">★★★★★</div><h4>NISAの効果を実感</h4><p>非課税と課税の手取り差がはっきり見えて、新NISAをフル活用する決め手になりました。</p><div class="who">40代・主婦</div></div>
+      </div>
+      <div class="voice">
+        <div class="face" style="background-image:url('../assets/photos/photo_15.jpg')"></div>
+        <div class="c"><div class="star">★★★★☆</div><h4>家族の将来設計に</h4><p>配当でゆとりある暮らしを目標にしています。家計の計画に役立っています。</p><div class="who">30代・子育て世帯</div></div>
+      </div>
     </div>
   </div>
 </section>
